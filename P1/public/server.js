@@ -31,6 +31,6 @@ app.use((req, res) => {
     res.status(404).sendFile(path.join(publicPath, 'error.html'));
 });
 
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+app.listen(PORT, '192.168.1.141',() => {
+    console.log(`Servidor corriendo en http://192.168.1.141:${PORT}`);
 });
