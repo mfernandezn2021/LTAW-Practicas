@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error 404 - Página no encontrada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-    <header>
+<body class="error-page">
+    <div class="error-container">
+        <div class="error-x"></div>
         <h1>Error 404</h1>
-    </header>
-    <main>
         <p>Lo sentimos, la página que buscas no existe.</p>
-        <a href="/">Volver a la página principal</a>
-    </main>
+        <button class="volver-btn" onclick="window.location.href='/'">Volver a la página principal</button>
+    </div>
 </body>
 </html>
