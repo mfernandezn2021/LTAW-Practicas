@@ -2,21 +2,35 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = 3000; // Puedes cambiar el puerto si lo necesitas
+const PORT = 3000;
 
-// Ruta al directorio public
-const publicPath = '/home/cosmiccondor/Documentos/cuartoCurso/segundoCuatri/LTAW-Practicas/P1/public';
+const publicPath = path.join(__dirname);
 
-// Middleware para servir archivos estáticos desde la carpeta "public"
 app.use(express.static(publicPath));
 
-// Ruta principal (sirve el archivo index.html)
+// Ruta para la página principal
 app.get('/', (req, res) => {
     res.sendFile(path.join(publicPath, 'index.html'));
 });
 
-// Iniciar el servidor
+// Ruta para las páginas de productos
+app.get('/producto/:id', (req, res) => {
+    const productoId = req.params.id;
+    const productoPath = path.join(publicPath, 'productos', `producto${productoId}.html`);
+    
+    // Verifica si el archivo del producto existe
+    if (require('fs').existsSync(productoPath)) {
+        res.sendFile(productoPath);
+    } else {
+        res.status(404).sendFile(path.join(publicPath, 'error.html'));
+    }
+});
+
+// Manejo de rutas no encontradas
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(publicPath, 'error.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
-    console.log(`Sirviendo archivos estáticos desde: ${publicPath}`);
 });
