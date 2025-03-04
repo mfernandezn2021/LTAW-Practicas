@@ -1,7 +1,7 @@
 const productos = [
     { id: 1, nombre: "RAZER BLACKWIDOW V4 PRO 75%", precio: 349.99, descripcion: "Conexión inalámbrica a 4000 Hz reales y Bluetooth 5.1. Razer" },
-    { id: 2, nombre: "Mouse gaming", precio: 139.99, descripcion: "Mouse ultra ligero para gaming con DPI ajustable. Logitech" },
-    { id: 3, nombre: "Auriculares premium para juegos", precio: 119.99, descripcion: "Auriculares inalámbricos premium para juegos Corsair" },
+    { id: 2, nombre: "Logitech PRO X SUPERLIGHT 2", precio: 139.99, descripcion: "Mouse ultra ligero para gaming con DPI ajustable. Logitech" },
+    { id: 3, nombre: "Corsair VOID RGB ELITE Wireless", precio: 119.99, descripcion: "Auriculares inalámbricos premium para juegos Corsair" },
 ];
 
 const listaProductos = document.getElementById('lista-productos');
