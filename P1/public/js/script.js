@@ -1,7 +1,7 @@
 const productos = [
-    { id: 1, nombre: "Teclado mecánico", precio: 89.99, descripcion: "Teclado mecánico con retroiluminación RGB" },
-    { id: 2, nombre: "Mouse gaming", precio: 49.99, descripcion: "Mouse ergonómico para gaming con DPI ajustable" },
-    { id: 3, nombre: "Auriculares inalámbricos", precio: 129.99, descripcion: "Auriculares inalámbricos con cancelación de ruido" }
+    { id: 1, nombre: "RAZER BLACKWIDOW V4 PRO 75%", precio: 349.99, descripcion: "Conexión inalámbrica a 4000 Hz reales y Bluetooth 5.1. Razer" },
+    { id: 2, nombre: "Mouse gaming", precio: 139.99, descripcion: "Mouse ultra ligero para gaming con DPI ajustable. Logitech" },
+    { id: 3, nombre: "Auriculares premium para juegos", precio: 119.99, descripcion: "Auriculares inalámbricos premium para juegos Corsair" },
 ];
 
 const listaProductos = document.getElementById('lista-productos');
