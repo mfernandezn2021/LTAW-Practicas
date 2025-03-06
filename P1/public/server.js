@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = 5000;
+const PORT = 2000;
 
 const publicPath = path.join(__dirname);
 
@@ -31,6 +31,6 @@ app.use((req, res) => {
     res.status(404).sendFile(path.join(publicPath, 'error.html'));
 });
 
-app.listen(PORT, '192.168.1.141',() => {
-    console.log(`Servidor corriendo en http://192.168.1.141:${PORT}`);
+app.listen(PORT, 'localhost',() => {
+    console.log(`Servidor corriendo en http://10.1.157.18:${PORT}`);
 });
