@@ -14,7 +14,7 @@ function mostrarProductos() {
             <img src="/img/producto${producto.id}.jpg" alt="${producto.nombre}">
             <h3>${producto.nombre}</h3>
             <p>Precio: $${producto.precio}</p>
-            <a href="/producto/${producto.id}">Ver detalles</a>
+            <a href="/producto${producto.id}.html">Ver detalles</a>
         `;
         listaProductos.appendChild(productoElement);
     });
