@@ -1,10 +1,9 @@
-const express = require('express');
+const http = require('http');
 const path = require('path');
 const fs = require('fs');
+const url = require('url');
 
-const app = express();
-const PORT = 2000;
-
+const PORT = 8001;
 const publicPath = path.join(__dirname, 'public');
 
 // MIME types mapping
@@ -19,49 +18,50 @@ const MIME_TYPES = {
     '.ico': 'image/x-icon'
 };
 
-// Middleware para manejar tipos MIME
-app.use((req, res, next) => {
-    const ext = path.extname(req.url);
+// Create HTTP server
+const server = http.createServer((req, res) => {
+    const parsedUrl = url.parse(req.url);
+    let pathname = `.${parsedUrl.pathname}`;
+    const ext = path.extname(pathname);
+
+    // Set MIME type if known
     if (MIME_TYPES[ext]) {
-        res.type(MIME_TYPES[ext]);
+        res.setHeader('Content-Type', MIME_TYPES[ext]);
     }
-    next();
-});
 
-// Configuración de rutas estáticas
-app.use('/css', express.static(path.join(__dirname, 'css')));
-app.use('/js', express.static(path.join(__dirname, 'js')));
-app.use('/img', express.static(path.join(__dirname, 'img')));
-app.use(express.static(publicPath));
-
-// Ruta para la página principal
-app.get('/', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index.html'));
-    console.log(`Ruta principal servida`);
-});
-
-// Ruta para las páginas de productos
-app.get('/producto:id.html', (req, res) => {
-    const productoFileName = `producto${req.params.id}.html`;
-    const productoPath = path.join(publicPath, productoFileName);
-    console.log(`Solicitud para producto: ${productoFileName}`);
-    
-    // Verifica si el archivo del producto existe
-    if (fs.existsSync(productoPath)) {
-        res.sendFile(productoPath);
-        console.log(`Producto servido: ${productoFileName}`);
+    // Handle root path
+    if (pathname === './') {
+        pathname = path.join(publicPath, 'index.html');
+    } else if (pathname.startsWith('./producto')) {
+        // Handle product pages
+        const productId = pathname.match(/producto(\d+)\.html/);
+        if (productId) {
+            pathname = path.join(publicPath, `producto${productId[1]}.html`);
+        }
     } else {
-        res.status(404).sendFile(path.join(publicPath, 'error.html'));
-        console.log(`Producto no encontrado: ${productoFileName}`);
+        // Serve static files
+        pathname = path.join(publicPath, pathname);
     }
+
+    // Check if file exists and serve it
+    fs.exists(pathname, (exist) => {
+        if (!exist) {
+            res.statusCode = 404;
+            pathname = path.join(publicPath, 'error.html');
+        }
+
+        fs.readFile(pathname, (err, data) => {
+            if (err) {
+                res.statusCode = 500;
+                res.end(`Error getting the file: ${err}.`);
+            } else {
+                res.end(data);
+            }
+        });
+    });
 });
 
-// Manejo de rutas no encontradas
-app.use((req, res) => {
-    res.status(404).sendFile(path.join(publicPath, 'error.html'));
-    console.log(`Ruta no encontrada: ${req.url}`);
-});
-
-app.listen(PORT, 'localhost', () => {
+// Start the server
+server.listen(PORT, 'localhost', () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
