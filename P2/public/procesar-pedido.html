@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesar Pedido - Tienda Online de Electrónica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Procesar Pedido</h1>
+    </header>
+    <main class="procesar-pedido-container">
+        <form id="procesar-pedido-form">
+            <label for="direccion">Dirección de envío:</label>
+            <input type="text" id="direccion" name="direccion" required>
+            <label for="tarjeta">Número de tarjeta:</label>
+            <input type="text" id="tarjeta" name="tarjeta" required>
+            <h3>Productos en el carrito:</h3>
+            <ul id="lista-carrito"></ul>
+            <p>Total: <span id="total-pedido"></span></p>
+            <button type="submit">Confirmar Pedido</button>
+        </form>
+        <p id="pedido-message"></p>
+    </main>
+    <script src="/js/procesar-pedido.js"></script>
+</body>
+</html>
