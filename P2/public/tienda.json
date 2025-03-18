@@ -1,0 +1,35 @@
+{
+    "Usuarios": [
+        {
+            "nombre": "root",
+            "nombreReal": "Administrador",
+            "correo": "admin@tienda.com"
+        },
+        {
+            "nombre": "usuario1",
+            "nombreReal": "Usuario 1",
+            "correo": "usuario1@correo.com"
+        }
+    ],
+    "Productos": [
+        {
+            "nombre": "RAZER BLACKWIDOW V4 PRO 75%",
+            "descripcion": "Conexión inalámbrica a 4000 Hz reales y Bluetooth 5.1",
+            "precio": 349.99,
+            "stock": 10
+        },
+        {
+            "nombre": "Logitech PRO X SUPERLIGHT 2",
+            "descripcion": "Mouse ultra ligero para gaming con DPI ajustable",
+            "precio": 139.99,
+            "stock": 15
+        },
+        {
+            "nombre": "Corsair VOID RGB ELITE Wireless",
+            "descripcion": "Auriculares inalámbricos premium para juegos Corsair",
+            "precio": 119.99,
+            "stock": 20
+        }
+    ],
+    "Pedidos": []
+}
