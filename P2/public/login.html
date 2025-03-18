@@ -3,37 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Online de Electrónica</title>
+    <title>Login - Tienda Online de Electrónica</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="login-form">
-        <label for="nombre">Nombre de usuario:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <button type="submit">Login</button>
-    </form>
-    <script>
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const nombre = document.getElementById('nombre').value;
-            fetch('/api/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nombre })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert(`Conectado como ${data.nombreReal}`);
-                    window.location.href = '/';
-                } else {
-                    alert('Usuario no encontrado');
-                }
-            });
-        });
-    </script>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <main class="login-container">
+        <form id="login-form">
+            <label for="nombre">Nombre de usuario:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <p id="login-message"></p>
+    </main>
+    <script src="/js/login.js"></script>
 </body>
 </html>
