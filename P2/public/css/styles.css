@@ -253,3 +253,40 @@ nav a:hover {
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
     transform: translateY(-2px);
 }
+
+.eliminar-btn {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #868686;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+#finalizar-compra-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#finalizar-compra {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #00b894;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#finalizar-compra:hover {
+    background-color: #019875;
+}
