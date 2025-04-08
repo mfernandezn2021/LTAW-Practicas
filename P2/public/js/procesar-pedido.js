@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     let total = 0;
 
     // Leer el archivo JSON para obtener los productos
-    const productos = await fetch('/ruta/a/tu/tienda.json')
+    const productos = await fetch('/public/tienda.json')
         .then(response => response.json())
         .then(data => data.Productos)
         .catch(error => {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             .then(data => {
                 alert('Pedido procesado con éxito');
                 localStorage.removeItem('carrito'); // Vaciar el carrito
-                window.location.href = '/gracias.html'; // Redirigir a la página de agradecimiento
+                window.location.href = '/gracias.html'; // Redirigir a la página de agradecimiento POR HACER IMPORTANTE
             })
             .catch(error => {
                 console.error('Error al procesar el pedido:', error);
