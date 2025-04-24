@@ -1,4 +1,12 @@
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    console.log("Enter => ejecucion de login()");
+		login();	
+  }
+});
+
 function login() {
+	console.log("Click => ejecucion de login()");
 	USERNAME = document.getElementById("userName").value;
 	var xml = new XMLHttpRequest();
 	xml.open("POST", "/login", true);
