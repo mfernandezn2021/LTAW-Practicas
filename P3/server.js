@@ -94,7 +94,7 @@ io.on('connect', (socket) => {
 // Lanzar el servidor HTTP
 server.listen(PUERTO);
 console.log("Escuchando en puerto: ".yellow + String(PUERTO).blue);
-console.log("Servidor iniciado en: ".yellow + "http://localhost:" + String(PUERTO).blue);
+console.log("Servidor iniciado en: ".yellow + "http://localhost:".blue + String(PUERTO).blue);
 console.log("________________________________________________".white);
 
 function spetialCommands(comand, socket , name ,channel){
