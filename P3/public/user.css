@@ -7,11 +7,6 @@
   height: 85%;
   border: none;
   border-radius: 32px;
-  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2),
-  0px -6px 6px rgba(0, 0, 0, 0.3),
-  6px  0px 6px rgba(0, 0, 0, 0.3),
-  -6px 0px 6px rgba(0, 0, 0, 0.3);
-  
 }
 
 #chatsDiv{
@@ -93,12 +88,6 @@
   width: 75%;
   height: 7.5%;
   background-color: #464646;
-  box-shadow: 
-  0 1.5px 1.5px rgba(0,0,0,0.35),
-  0 1.5px 1.5px rgba(0,0,0,0.35), 
-  0 1.5px 1.5px rgba(0,0,0,0.35), 
-  0 1.5px 1.5px rgba(0,0,0,0.35),
-  0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 
 .mainDiv #tittleConversation #tittleConversationH1{
@@ -139,7 +128,7 @@
 }
 
 .mainDiv #messagesDiv::-webkit-scrollbar-thumb:hover {
-  background: #363636; /* Color del "pulgador" de la barra al pasar el cursor por encima */
+  background: #363636;
   border-radius: 150%;
 }
 
@@ -154,18 +143,12 @@
   margin-top: 1%;
   margin-left: 1%;
   margin-bottom: 1%;
-  border: 1px solid rgb(179, 83, 179);
-  background-color: rgb(175, 83, 175);
+  border: 1px solid rgb(179, 159, 46);
+  background-color: rgb(209, 186, 55);
   border-radius: 16px;
   width: min-content;
   max-width: 40%;
   min-width: 5%;
-  box-shadow: 
-            0 1.5px 1.5px rgba(0,0,0,0.35),
-            0 1.5px 1.5px rgba(0,0,0,0.35), 
-            0 1.5px 1.5px rgba(0,0,0,0.35), 
-            0 1.5px 1.5px rgba(0,0,0,0.35),
-            0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 .mainDiv #messagesDiv .messageClassDiv1 .chatTimeText{
   width: 100%;
@@ -191,7 +174,7 @@
   margin: auto;
   margin-right: 1.1vw;
   margin-left: 0.5vw;
-  color: #fafafa;
+  color: #ffffff;
   font-size: 80%;
 }
 
@@ -208,8 +191,8 @@
   width: max-content;
   max-width: 25vw;
   border-radius: 16px;
-  color: #fafafa;
-  background-color: rgb(92, 45, 92);
+  color: #ffffff;
+  background-color: rgb(146, 129, 30);
   word-break: break-all;
 
 }
@@ -221,18 +204,12 @@
   margin-top: 1%;
   margin-right: 2%;
   margin-bottom: 1%;
-  border: 1px solid rgb(0, 179, 95);
-  background-color: rgb(0, 179, 95);
+  border: 1px solid rgb(0, 179, 30);
+  background-color: rgb(0, 179, 30);
   border-radius: 16px;
   width: min-content;
   max-width: 40%;
   min-width: 5%;
-  box-shadow: 
-            0 1.5px 1.5px rgba(0,0,0,0.35),
-            0 1.5px 1.5px rgba(0,0,0,0.35), 
-            0 1.5px 1.5px rgba(0,0,0,0.35), 
-            0 1.5px 1.5px rgba(0,0,0,0.35),
-            0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 
 
@@ -296,12 +273,6 @@
   border-radius: 16px;
   width: auto;
   max-width: 45%;
-  box-shadow: 
-            0 1.5px 1.5px rgba(0,0,0,0.35),
-            0 1.5px 1.5px rgba(0,0,0,0.35), 
-            0 1.5px 1.5px rgba(0,0,0,0.35), 
-            0 1.5px 1.5px rgba(0,0,0,0.35),
-            0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 
 .mainDiv #messagesDiv .messageClassDiv3 .userName{
@@ -322,8 +293,6 @@
   background-color: rgb(35, 106, 134);
   word-break: break-all;
 }
-
-
 
 
 .mainDiv .inputDiv{
@@ -364,33 +333,17 @@
   background-color: #4b4b4b;
   color: #d8d8d8;
   font-weight: 800;
-  box-shadow: 
-            0 1.5px 1.5px rgba(0,0,0,0.35),
-            0 1.5px 1.5px rgba(0,0,0,0.35), 
-            0 1.5px 1.5px rgba(0,0,0,0.35), 
-            0 1.5px 1.5px rgba(0,0,0,0.35),
-            0 1.5px 1.5px rgba(0,0,0,0.35);
-
-  transition: background-color 1s , box-shadow 1s;
 }
 
 .mainDiv .inputDiv #inputButton:hover{
   background-color: rgb(0, 179, 95);
-  box-shadow: 
-            0 4px 4px rgba(0,0,0,0.20),
-            0 4px 4px rgba(0,0,0,0.20), 
-            0 4px 4px rgba(0,0,0,0.20), 
-            0 4px 4px rgba(0,0,0,0.20),
-            0 4px 4px rgba(0,0,0,0.20);
 }
 
 .mainDiv .inputDiv #inputButton:active{
   box-shadow: none;
 }
 
-
 #footerText{
-  
   margin: auto;
   margin-top: 2%;
   text-align: center;
