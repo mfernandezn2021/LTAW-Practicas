@@ -48,11 +48,13 @@ function sendMessage(){
   msg = input.value
   date = getDate()
   if (msg != "") {
+    console.log("Mensaje enviado => {" + msg + "}");
     input.value = ""
     CHAT_DATABASE[STATE] += "<div class='messageClassDiv2'> <p class='chatTimeText'> <span class='userName'>Tú</span>  <span class='messDate'>" + getDate() + "</span>  </p>   <p class='chatText'>"+msg+"</p></div>"
     messagesDiv.innerHTML = CHAT_DATABASE[STATE]
     socket.emit("message" , [STATE,USERNAME,msg])
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    
   }
 }
 
