@@ -1,5 +1,5 @@
 document.addEventListener("keydown", function(event) {
-	if (event.key === "Enter") {
+	if (event.key === "Enter" && document.getElementById("userName")) {
     console.log("Enter key pressed");
 		login();
   }
