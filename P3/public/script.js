@@ -1,7 +1,7 @@
 document.addEventListener("keydown", function(event) {
-  if (event.key === "Enter") {
-    console.log("Enter => ejecucion de login()");
-		login();	
+	if (event.key === "Enter") {
+    console.log("Enter key pressed");
+		login();
   }
 });
 
@@ -34,4 +34,10 @@ function login() {
 		}
 	};
 	xml.send(`userName=${USERNAME}`);
+	// Delete script elements (script.js and styles.css)
+	var script = document.getElementById("script");
+	var styles = document.getElementById("styles");
+	document.head.removeChild(script);
+	document.head.removeChild(styles);
+	
 }
