@@ -1,35 +1,62 @@
 {
-    "Usuarios": [
+  "Usuarios": [
+    {
+      "nombre": "root",
+      "nombreReal": "Administrador",
+      "correo": "admin@tienda.com"
+    },
+    {
+      "nombre": "usuario1",
+      "nombreReal": "Usuario 1",
+      "correo": "usuario1@correo.com"
+    }
+  ],
+  "Productos": [
+    {
+      "nombre": "RAZER BLACKWIDOW V4 PRO 75%",
+      "descripcion": "Conexión inalámbrica a 4000 Hz reales y Bluetooth 5.1",
+      "precio": 349.99,
+      "stock": 8
+    },
+    {
+      "nombre": "Logitech PRO X SUPERLIGHT 2",
+      "descripcion": "Mouse ultra ligero para gaming con DPI ajustable",
+      "precio": 139.99,
+      "stock": 7
+    },
+    {
+      "nombre": "Corsair VOID RGB ELITE Wireless",
+      "descripcion": "Auriculares inalámbricos premium para juegos Corsair",
+      "precio": 119.99,
+      "stock": 18
+    }
+  ],
+  "Pedidos": [
+    {
+      "direccion": "Calle de la universidad",
+      "tarjeta": "123456789101112",
+      "productos": [
         {
-            "nombre": "root",
-            "nombreReal": "Administrador",
-            "correo": "admin@tienda.com"
+          "nombre": "RAZER BLACKWIDOW V4 PRO 75%",
+          "descripcion": "Conexión inalámbrica a 4000 Hz reales y Bluetooth 5.1",
+          "precio": 349.99,
+          "stock": 9
         },
         {
-            "nombre": "usuario1",
-            "nombreReal": "Usuario 1",
-            "correo": "usuario1@correo.com"
+          "nombre": "Logitech PRO X SUPERLIGHT 2",
+          "descripcion": "Mouse ultra ligero para gaming con DPI ajustable",
+          "precio": 139.99,
+          "stock": 8
+        },
+        {
+          "nombre": "Corsair VOID RGB ELITE Wireless",
+          "descripcion": "Auriculares inalámbricos premium para juegos Corsair",
+          "precio": 119.99,
+          "stock": 19
         }
-    ],
-    "Productos": [
-        {
-            "nombre": "RAZER BLACKWIDOW V4 PRO 75%",
-            "descripcion": "Conexión inalámbrica a 4000 Hz reales y Bluetooth 5.1",
-            "precio": 349.99,
-            "stock": 10
-        },
-        {
-            "nombre": "Logitech PRO X SUPERLIGHT 2",
-            "descripcion": "Mouse ultra ligero para gaming con DPI ajustable",
-            "precio": 139.99,
-            "stock": 15
-        },
-        {
-            "nombre": "Corsair VOID RGB ELITE Wireless",
-            "descripcion": "Auriculares inalámbricos premium para juegos Corsair",
-            "precio": 119.99,
-            "stock": 20
-        }
-    ],
-    "Pedidos": []
+      ],
+      "total": 609.97,
+      "fecha": "2025-05-10T16:36:57.433Z"
+    }
+  ]
 }
