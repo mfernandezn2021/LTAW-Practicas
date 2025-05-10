@@ -1,0 +1,355 @@
+#contentDiv{
+  display: flex;
+  margin: auto;
+  margin-top: 5vh;
+  flex-direction: row;
+  width: 95%;
+  height: 85vh;
+  border: none;
+  border-radius: 32px;
+}
+
+#chatsDiv{
+  height: 100.2%;
+  border-radius: 32px 0 0 32px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 0;
+  margin-right: 0;
+  background-color: #464646;
+  border-right: 1px solid #0b0b0b79;
+  box-sizing: border-box;
+  color: #fafafa;
+  text-align: center;
+}
+
+#footerText{
+  margin: auto;
+  margin-top: 2%;
+  text-align: center;
+  color: #fafafa;
+}
+
+#chatsDiv #secondaryText{
+  padding-bottom: 10%;
+  margin-bottom: -0.25%;
+  border-radius: 32px 0 0 0px;
+  border-bottom: 2px rgb(42, 42, 42) solid;
+  background-color: #464646
+}
+
+#chatsDiv .userChat{
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  text-align: left;
+  border-bottom: 1px rgb(42, 42, 42) solid;
+  transition: background-color 0.15s , box-shadow 1s;
+}
+
+#chatsDiv .userChat:hover{
+  background-color: #888;
+}
+
+#chatsDiv .userChat .userNameUserChat{
+  margin: auto;
+  margin-left: 10%;
+  font-weight: 600;
+  font-size: 130%;
+}
+
+#chatsDiv .userChat .greenDot{
+  color: rgb(21, 255, 33);
+  margin: auto;
+  margin-right: 10%;
+  font-size: 200%;
+  font-weight: 900;
+}
+
+.mainDiv{
+  margin: auto;
+  position: relative;
+  margin-top: 0;
+  width: 90%;
+  height: 100%;
+  border: none;
+  border-radius: 0 32px 32px 0;
+  text-align: center;
+  background-color: #363636;
+  color: rgb(234, 234, 234);
+
+}
+
+
+.mainDiv #tittleConversation{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: auto;
+  border-radius: 0 0 32px 32px;
+  text-align: center;
+  width: 75%;
+  height: 7.5%;
+  background-color: #464646;
+}
+
+.mainDiv #tittleConversation #tittleConversationH1{
+  height: fit-content;
+  margin: auto;
+  margin-top: 1.25%;
+  font-size: 150%;
+  font-weight: 700;
+  width: fit-content;
+  height: fit-content;
+}
+
+.mainDiv #messagesDiv{
+  margin: auto;
+  background-color: #363636;
+  border: 0% 1% 1% 1% solid #0b0b0b79;
+  box-sizing: border-box;
+  border-radius: 0 16px 0 0;
+  height: 90.3%;
+  width: 100%;
+  overflow: auto;
+
+}
+
+.mainDiv #messagesDiv::-webkit-scrollbar {
+  width: 0.25vw; /* Ancho de la barra */
+  border-radius: 150%;
+}  
+
+.mainDiv #messagesDiv::-webkit-scrollbar-track {
+  background: #363636; /* Color del fondo de la barra */
+  border-radius: 100%;
+}
+
+.mainDiv #messagesDiv::-webkit-scrollbar-thumb {
+  background: #888; /* Color del "pulsador" de la barra */
+  border-radius: 150%;
+}
+
+.mainDiv #messagesDiv::-webkit-scrollbar-thumb:hover {
+  background: #363636;
+  border-radius: 150%;
+}
+
+.invisibleDiv{
+  height: 10%;
+}
+
+.mainDiv #messagesDiv .messageClassDiv1{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  border: 1px solid rgb(201, 255, 53);
+  background-color: rgb(159, 197, 54);
+  border-radius: 16px;
+  width: min-content;
+  max-width: 40%;
+  min-width: 5%;
+}
+.mainDiv #messagesDiv .messageClassDiv1 .chatTimeText{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+
+.mainDiv #messagesDiv .messageClassDiv1 .userName{
+  font-weight: 800;
+  text-align: left;
+  margin: auto;
+  margin-left: 1.1vw;
+  width: auto;
+  max-width: 80%;
+  min-width: 20%;
+  display: inline;
+}
+
+.mainDiv #messagesDiv .messageClassDiv1 .chatTimeText .messDate{
+  margin: auto;
+  margin-right: 1.1vw;
+  margin-left: 0.5vw;
+  color: #ffffff;
+  font-size: 80%;
+}
+
+.mainDiv #messagesDiv .messageClassDiv1 .chatText{
+  padding-left:  0.75vw;
+  padding-right: 0.75vw;
+  font-weight: 400;
+  font-size: 110;
+  text-align: left;
+  margin: auto;
+  margin-left: 1vw;
+  margin-right: 0.75vw;
+  margin-bottom: 0.5vh;
+  width: max-content;
+  max-width: 25vw;
+  border-radius: 16px;
+  color: #ffffff;
+  background-color: rgb(112, 138, 42);
+  word-break: break-all;
+
+}
+
+.mainDiv #messagesDiv .messageClassDiv2{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 1%;
+  margin-right: 2%;
+  margin-bottom: 1%;
+  border: 1px solid rgb(99, 162, 212);
+  background-color: rgb(99, 162, 212);
+  border-radius: 16px;
+  width: min-content;
+  max-width: 40%;
+  min-width: 5%;
+}
+
+
+
+.mainDiv #messagesDiv .messageClassDiv2 .chatTimeText{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+
+.mainDiv #messagesDiv .messageClassDiv2 .chatTimeText .userName{
+  font-weight: 800;
+  text-align: left;
+  margin: auto;
+  margin-left: 1.1vw;
+  width: auto;
+  max-width: 80%;
+  min-width: 20%;
+  display: inline;
+
+}
+
+.mainDiv #messagesDiv .messageClassDiv2 .chatTimeText .messDate{
+  margin: auto;
+  margin-right: 1.1vw;
+  margin-left: 0.5vw;
+  color: #fafafa;
+  font-size: 80%;
+}
+
+.mainDiv #messagesDiv .messageClassDiv2 .chatText{
+
+  padding-left:  0.75vw;
+  padding-right: 0.75vw;
+  font-weight: 400;
+  font-size: 110;
+  text-align: left;
+  margin: auto;
+  margin-left: 1vw;
+  margin-right: 0.75vw;
+  margin-bottom: 0.5vh;
+  width: max-content;
+  max-width: 25vw;
+  min-width: 1.75vw;
+  border-radius: 16px;
+  color: #fafafa;
+  background-color: rgb(0, 86, 199);
+  word-break: break-all;
+
+}
+
+.mainDiv #messagesDiv .messageClassDiv3{
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: 1px solid rgb(77, 77, 77);
+  background-color: rgb(252, 130, 31);
+  border-radius: 16px;
+  width: auto;
+  max-width: 45%;
+}
+
+.mainDiv #messagesDiv .messageClassDiv3 .userName{
+  font-weight: 800;
+  font-size: 120%;
+}
+
+.mainDiv #messagesDiv .messageClassDiv3 .chatText{
+  margin: auto;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  font-weight: 400;
+  font-size: 110; /* cambio*/
+  text-align: center;
+  border-radius: 16px;
+  color: #fafafa;
+  max-width: 30vw;
+  background-color: rgb(59, 59, 59);
+  word-break: break-all;
+}
+
+
+.mainDiv .inputDiv{
+  height: 9.9%;
+  border-top: 1px solid #0b0b0b79;
+  border-bottom: 0px;
+  box-sizing: border-box;
+  border-radius: 0 0 32px 0;
+  background-color: #464646;
+}
+
+
+.mainDiv .inputDiv #inputInput{
+  width: 90%;
+  height: 60%;
+  margin: auto;
+  margin-top: 1%;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #0b0b0b79;
+  box-sizing: border-box;
+  background-color: #cbcbcb;
+  font-size: 150%;
+  color: rgb(43, 42, 42);
+}
+
+.mainDiv .inputDiv #inputButton{
+  margin: auto;
+  margin-top: 0.55%;
+  font-size: 150%;
+  height: 5vh;
+  width: 5vh;
+  border-radius: 32px;
+  border: 1px solid #0b0b0b79;
+  box-sizing: border-box;
+  background-color: #4b4b4b;
+  color: #e9e9e9;
+  font-weight: 800;
+}
+
+.mainDiv .inputDiv #inputButton:hover{
+  background-color: rgb(47, 255, 255);
+}
+
+.mainDiv .inputDiv #inputButton:active{
+  box-shadow: none;
+}
+
+
+
+
+
+
+
+/* MIRAR BIEN SCROLL-BEHAVIOUR PARA LA VENTANA DE MENSAJES DE CADA USUARIO
