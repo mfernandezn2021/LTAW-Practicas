@@ -1,0 +1,17 @@
+{
+    "name": "mi-electron-app",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "colors": "^1.4.0",
+        "express": "^5.1.0",
+        "socket.io": "^4.8.1"
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.2",
+        "electron": "^35.3.0"
+    }
+}
