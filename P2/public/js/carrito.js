@@ -29,16 +29,27 @@ document.addEventListener('DOMContentLoaded', function () {
             finalizarCompraBtn.style.display = 'none';
             return;
         }
-
+    
         finalizarCompraBtn.style.display = 'block';
         const listaProductos = document.createElement('ul');
         listaProductos.classList.add('lista-productos');
-
+    
+        let total = 0;
+    
         carrito.forEach((producto, index) => {
+            // Si el producto es un string, intenta parsearlo como objeto
+            if (typeof producto === 'string') {
+                try {
+                    producto = JSON.parse(producto);
+                } catch {
+                    producto = { nombre: producto, precio: 0 };
+                }
+            }
             const li = document.createElement('li');
-            li.textContent = producto;
+            li.textContent = `${producto.nombre} - $${producto.precio ? producto.precio.toFixed(2) : '0.00'}`;
             li.classList.add('producto-item');
-
+            total += producto.precio ? producto.precio : 0;
+    
             // Botón para eliminar producto
             const eliminarBtn = document.createElement('button');
             eliminarBtn.textContent = 'Eliminar';
@@ -46,12 +57,21 @@ document.addEventListener('DOMContentLoaded', function () {
             eliminarBtn.addEventListener('click', function () {
                 eliminarProducto(index, li);
             });
-
+    
             li.appendChild(eliminarBtn);
             listaProductos.appendChild(li);
         });
-
+    
         contenidoCarrito.appendChild(listaProductos);
+    
+        // Mostrar el total
+        let totalDiv = document.getElementById('total-carrito');
+        if (!totalDiv) {
+            totalDiv = document.createElement('div');
+            totalDiv.id = 'total-carrito';
+            contenidoCarrito.appendChild(totalDiv);
+        }
+        totalDiv.textContent = `Total: $${total.toFixed(2)}`;
     }
 
     // Función para eliminar un producto con animación
