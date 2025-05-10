@@ -13,32 +13,34 @@ document.addEventListener('DOMContentLoaded', async function () {
             return [];
         });
 
-    // Renderizar los productos del carrito con sus precios
-    carrito.forEach(productoNombre => {
-        const producto = productos.find(p => p.nombre === productoNombre);
-
-        if (producto) {
-            const li = document.createElement('li');
-            li.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)}`;
-            listaCarrito.appendChild(li);
-
-            total += producto.precio; // Sumar el precio al total
-        } else {
-            console.warn(`Producto no encontrado: ${productoNombre}`);
+    carrito.forEach(producto => {
+        // Si el producto es un string, intenta parsearlo como objeto
+        if (typeof producto === 'string') {
+            try {
+                producto = JSON.parse(producto);
+            } catch {
+                producto = { nombre: producto, precio: 0 };
+            }
         }
+        const li = document.createElement('li');
+        li.textContent = `${producto.nombre} - $${producto.precio ? producto.precio.toFixed(2) : '0.00'}`;
+        listaCarrito.appendChild(li);
+
+        total += producto.precio ? producto.precio : 0;
     });
+
+    
 
     // Mostrar el total del pedido
     totalPedido.textContent = `Total: $${total.toFixed(2)}`;
 
     // Procesar el pedido al enviar el formulario
-    const form = document.getElementById('form-procesar-pedido');
+    const form = document.getElementById('procesar-pedido-form');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         const direccion = document.getElementById('direccion').value;
         const tarjeta = document.getElementById('tarjeta').value;
-
-        // Enviar pedido al servidor
+    
         fetch('/api/procesar-pedido', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -49,15 +51,20 @@ document.addEventListener('DOMContentLoaded', async function () {
                 total
             })
         })
-            .then(response => response.json())
-            .then(data => {
-                alert('Pedido procesado con éxito');
-                localStorage.removeItem('carrito'); // Vaciar el carrito
-                window.location.href = '/gracias.html'; // Redirigir a la página de agradecimiento POR HACER IMPORTANTE
-            })
-            .catch(error => {
-                console.error('Error al procesar el pedido:', error);
-                alert('Hubo un error al procesar tu pedido. Por favor, inténtalo de nuevo.');
-            });
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('pedido-mensaje').textContent = 'Pedido procesado con éxito';
+            console.log('Pedido procesado:', data);
+            alert('Pedido procesado con éxito');
+            localStorage.removeItem('carrito');
+            setTimeout(() => {
+                window.location.href = '/index.html';
+            }
+            , 2000); // Redirigir después de 2 segundos
+        })
+        .catch(error => {
+            console.error('Error al procesar el pedido:', error);
+            alert('Hubo un error al procesar tu pedido. Por favor, inténtalo de nuevo.');
+        });
     });
 });
