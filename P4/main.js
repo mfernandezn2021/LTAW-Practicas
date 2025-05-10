@@ -10,12 +10,8 @@ let serverProcess = null;
 function startServer(win) {
   serverProcess = spawn('node', [path.join(__dirname, 'server.js')]);
   serverProcess.stdout.on('data', (data) => {
-      win.webContents.send('server-msg', data.toString());
-      // Detecta el mensaje especial de usuarios conectados
-      const match = data.toString().match(/USERS_COUNT: (\d+)/);
-      if (match) {
-          win.webContents.send('users-count', parseInt(match[1]));
-      }
+    const message = data.toString().trim();
+    win.webContents.send('server-msg', message);
   });
   serverProcess.stderr.on('data', (data) => {
       win.webContents.send('server-msg', `<span style="color:red">${data.toString()}</span>`);

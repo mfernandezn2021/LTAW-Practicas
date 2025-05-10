@@ -21,9 +21,12 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   // Mostrar mensajes del servidor en tiempo real
   window.electronAPI.onServerMsg((_, msg) => {
-      const messages = document.getElementById('messages');
-      messages.innerHTML += `<div>${msg}</div>`;
-      messages.scrollTop = messages.scrollHeight;
+    const messages = document.getElementById('messages');
+    const formattedMessage = `<div style="margin-bottom: 10px; border-bottom: 1px solid #ccc; padding: 5px;">
+        ${msg}
+    </div>`;
+    messages.innerHTML += formattedMessage;
+    messages.scrollTop = messages.scrollHeight;
   });
 
   // Botón de prueba

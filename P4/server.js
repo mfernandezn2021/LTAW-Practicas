@@ -154,15 +154,15 @@ function getDate(){
 	return fechaHora
 }
 
-function showMesageData(msg , id){
-	console.log("________________________________________________".white);
-	console.log("Mensaje recibido: ".magenta);
-	console.log("Origin id: ".blue + id.yellow);
-	console.log("Destination id: ".blue + msg[0].yellow);
-	if (msg[0] == "general") {
-			console.log("Message content: ".blue + msg[2].yellow)
+function showMesageData(msg, id) {
+	console.log("------------------------------------------------");
+	console.log(`Mensaje recibido`);
+	console.log(`Origen (ID): ${id}`);
+	console.log(`Destino (ID): ${msg[0]}`);
+	if (msg[0] === "general") {
+			console.log(`Contenido del mensaje: ${msg[2]}`);
 	} else {
-			console.log("Message content: ".blue + "PRIVATE CONVERSATION")
+			console.log(`Contenido del mensaje: [CONVERSACIÓN PRIVADA]`);
 	}
-	console.log("________________________________________________".white);
+	console.log("------------------------------------------------");
 }
