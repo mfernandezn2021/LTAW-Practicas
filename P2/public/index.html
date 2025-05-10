@@ -17,11 +17,15 @@
             <a href="login.html" id="loginButton">Iniciar sesión</a>
         </nav>
     </header>
-
+    <div id="busqueda-container" style="text-align:center; margin-top:20px;">
+        <input type="text" id="busqueda-producto" placeholder="Buscar producto..." autocomplete="off">
+        <button id="buscar-btn">Buscar</button>
+        <div id="sugerencias" style="position:relative; display:inline-block;"></div>
+    </div>
     <main id="lista-productos">
         <!-- Los productos se cargarán dinámicamente aquí -->
     </main>
 
-    <script src="/js/script.js"></script>
+    <script src="/js/script.js" defer></script>
 </body>
 </html>
