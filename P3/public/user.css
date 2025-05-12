@@ -16,10 +16,10 @@
   margin: auto;
   margin-top: 0;
   margin-right: 0;
-  background-color: #464646;
-  border-right: 1px solid #0b0b0b79;
+  background-color: #23272f; /* fondo lateral más oscuro */
+  border-right: 1px solid #3a4152;
   box-sizing: border-box;
-  color: #fafafa;
+  color: #e5e5e5;
   text-align: center;
 }
 
@@ -27,15 +27,15 @@
   margin: auto;
   margin-top: 2%;
   text-align: center;
-  color: #fafafa;
+  color: #e5e5e5;
 }
 
 #chatsDiv #secondaryText{
   padding-bottom: 10%;
   margin-bottom: -0.25%;
   border-radius: 32px 0 0 0px;
-  border-bottom: 2px rgb(42, 42, 42) solid;
-  background-color: #464646
+  border-bottom: 2px #3a4152 solid;
+  background-color: #23272f;
 }
 
 #chatsDiv .userChat{
@@ -43,12 +43,12 @@
   margin: auto;
   flex-direction: row;
   text-align: left;
-  border-bottom: 1px rgb(42, 42, 42) solid;
-  transition: background-color 0.15s , box-shadow 1s;
+  border-bottom: 1px #3a4152 solid;
+  transition: background-color 0.15s;
 }
 
 #chatsDiv .userChat:hover{
-  background-color: #888;
+  background-color: #394150;
 }
 
 #chatsDiv .userChat .userNameUserChat{
@@ -59,7 +59,7 @@
 }
 
 #chatsDiv .userChat .greenDot{
-  color: rgb(21, 255, 33);
+  color: #4ecdc4; /* verde azulado elegante */
   margin: auto;
   margin-right: 10%;
   font-size: 200%;
@@ -75,11 +75,9 @@
   border: none;
   border-radius: 0 32px 32px 0;
   text-align: center;
-  background-color: #363636;
-  color: rgb(234, 234, 234);
-
+  background-color: #2d3142; /* fondo principal */
+  color: #e5e5e5;
 }
-
 
 .mainDiv #tittleConversation{
   position: absolute;
@@ -92,7 +90,7 @@
   text-align: center;
   width: 75%;
   height: 7.5%;
-  background-color: #464646;
+  background-color: #23272f;
 }
 
 .mainDiv #tittleConversation #tittleConversationH1{
@@ -107,33 +105,32 @@
 
 .mainDiv #messagesDiv{
   margin: auto;
-  background-color: #363636;
-  border: 0% 1% 1% 1% solid #0b0b0b79;
+  background-color: #23272f;
+  border: 0% 1% 1% 1% solid #3a4152;
   box-sizing: border-box;
   border-radius: 0 16px 0 0;
   height: 90.3%;
   width: 100%;
   overflow: auto;
-
 }
 
 .mainDiv #messagesDiv::-webkit-scrollbar {
-  width: 0.25vw; /* Ancho de la barra */
+  width: 0.25vw;
   border-radius: 150%;
 }  
 
 .mainDiv #messagesDiv::-webkit-scrollbar-track {
-  background: #363636; /* Color del fondo de la barra */
+  background: #23272f;
   border-radius: 100%;
 }
 
 .mainDiv #messagesDiv::-webkit-scrollbar-thumb {
-  background: #888; /* Color del "pulsador" de la barra */
+  background: #49506a;
   border-radius: 150%;
 }
 
 .mainDiv #messagesDiv::-webkit-scrollbar-thumb:hover {
-  background: #363636;
+  background: #2d3142;
   border-radius: 150%;
 }
 
@@ -148,8 +145,8 @@
   margin-top: 1%;
   margin-left: 1%;
   margin-bottom: 1%;
-  border: 1px solid rgb(201, 255, 53);
-  background-color: rgb(159, 197, 54);
+  border: 2px solid #f5c97a; /* dorado suave */
+  background-color: #3a4152;
   border-radius: 16px;
   width: min-content;
   max-width: 40%;
@@ -179,7 +176,7 @@
   margin: auto;
   margin-right: 1.1vw;
   margin-left: 0.5vw;
-  color: #ffffff;
+  color: #bfc9d1;
   font-size: 80%;
 }
 
@@ -196,10 +193,9 @@
   width: max-content;
   max-width: 25vw;
   border-radius: 16px;
-  color: #ffffff;
-  background-color: rgb(112, 138, 42);
+  color: #e5e5e5;
+  background-color: #49506a;
   word-break: break-all;
-
 }
 
 .mainDiv #messagesDiv .messageClassDiv2{
@@ -209,15 +205,13 @@
   margin-top: 1%;
   margin-right: 2%;
   margin-bottom: 1%;
-  border: 1px solid rgb(99, 162, 212);
-  background-color: rgb(99, 162, 212);
+  border: 1px solid #4ecdc4;
+  background-color: #394150;
   border-radius: 16px;
   width: min-content;
   max-width: 40%;
   min-width: 5%;
 }
-
-
 
 .mainDiv #messagesDiv .messageClassDiv2 .chatTimeText{
   width: 100%;
@@ -237,19 +231,17 @@
   max-width: 80%;
   min-width: 20%;
   display: inline;
-
 }
 
 .mainDiv #messagesDiv .messageClassDiv2 .chatTimeText .messDate{
   margin: auto;
   margin-right: 1.1vw;
   margin-left: 0.5vw;
-  color: #fafafa;
+  color: #bfc9d1;
   font-size: 80%;
 }
 
 .mainDiv #messagesDiv .messageClassDiv2 .chatText{
-
   padding-left:  0.75vw;
   padding-right: 0.75vw;
   font-weight: 400;
@@ -263,18 +255,17 @@
   max-width: 25vw;
   min-width: 1.75vw;
   border-radius: 16px;
-  color: #fafafa;
-  background-color: rgb(0, 86, 199);
+  color: #e5e5e5;
+  background-color: #49506a;
   word-break: break-all;
-
 }
 
 .mainDiv #messagesDiv .messageClassDiv3{
   margin: auto;
   margin-top: 1%;
   margin-bottom: 1%;
-  border: 1px solid rgb(77, 77, 77);
-  background-color: rgb(252, 130, 31);
+  border: 1px solid #f5c97a;
+  background-color: #583e16;
   border-radius: 16px;
   width: auto;
   max-width: 45%;
@@ -290,25 +281,23 @@
   margin-top: 0.5vh;
   margin-bottom: 0.5vh;
   font-weight: 400;
-  font-size: 110; /* cambio*/
+  font-size: 110;
   text-align: center;
   border-radius: 16px;
-  color: #fafafa;
+  color: #e5e5e5;
   max-width: 30vw;
-  background-color: rgb(59, 59, 59);
+  background-color: #583e16;
   word-break: break-all;
 }
 
-
 .mainDiv .inputDiv{
   height: 9.9%;
-  border-top: 1px solid #0b0b0b79;
+  border-top: 1px solid #3a4152;
   border-bottom: 0px;
   box-sizing: border-box;
   border-radius: 0 0 32px 0;
-  background-color: #464646;
+  background-color: #23272f;
 }
-
 
 .mainDiv .inputDiv #inputInput{
   width: 90%;
@@ -317,11 +306,11 @@
   margin-top: 1%;
   border-radius: 16px;
   text-align: center;
-  border: 1px solid #0b0b0b79;
+  border: 1px solid #3a4152;
   box-sizing: border-box;
-  background-color: #cbcbcb;
+  background-color: #e5e5e5;
   font-size: 150%;
-  color: rgb(43, 42, 42);
+  color: #23272f;
 }
 
 .mainDiv .inputDiv #inputButton{
@@ -331,25 +320,14 @@
   height: 5vh;
   width: 5vh;
   border-radius: 32px;
-  border: 1px solid #0b0b0b79;
+  border: 1px solid #3a4152;
   box-sizing: border-box;
-  background-color: #4b4b4b;
-  color: #e9e9e9;
+  background-color: #49506a;
+  color: #f5c97a;
   font-weight: 800;
 }
 
 .mainDiv .inputDiv #inputButton:hover{
-  background-color: rgb(47, 255, 255);
+  background-color: #f5c97a;
+  color: #23272f;
 }
-
-.mainDiv .inputDiv #inputButton:active{
-  box-shadow: none;
-}
-
-
-
-
-
-
-
-/* MIRAR BIEN SCROLL-BEHAVIOUR PARA LA VENTANA DE MENSAJES DE CADA USUARIO
